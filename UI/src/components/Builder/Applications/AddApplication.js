@@ -12,6 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 
+
 export default function AddApplication() {
   const [values, setValues] = useState({
     title: "",
@@ -63,47 +64,47 @@ export default function AddApplication() {
   }, [id]);
 
   return (
-      <Card>
-        <CardContent>
-          <Typography variant="h6" component="div">
-            {id ? "Edit Application" : "Add Application"}
-          </Typography>
-          <br></br>
-          <form autoComplete="off" noValidate onSubmit={handleSubmit}>
-            <Grid container spacing={3}>
-              <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  name="title"
-                  label="Title"
-                  value={values.title}
-                  onChange={(e) =>
-                    setValues({
-                      ...values,
-                      title: e.target.value,
-                    })
-                  }
-                  {...(errors.title && {
-                    error: true,
-                    helperText: errors.title,
-                  })}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Button
-                  fullWidth
-                  variant="contained"
-                  color="primary"
-                  type="submit"
-                  style={{ marginTop: "10px" }}
-                >
-                  {id ? "Update" : "Save"}
-                </Button>
-              </Grid>
+    <Card>
+      <CardContent>
+        <Typography variant="h6" component="div">
+          {id ? "Edit Application" : "Add Application"}
+        </Typography>
+        <br></br>
+        <form autoComplete="off" noValidate onSubmit={handleSubmit}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <TextField
+                required
+                fullWidth
+                name="title"
+                label="Title"
+                value={values.title}
+                onChange={(e) =>
+                  setValues({
+                    ...values,
+                    title: e.target.value,
+                  })
+                }
+                {...(errors.title && {
+                  error: true,
+                  helperText: errors.title,
+                })}
+              />
             </Grid>
-          </form>
-        </CardContent>
-      </Card>
+            <Grid item xs={12}>
+              <Button
+                fullWidth
+                variant="contained"
+                color="primary"
+                type="submit"
+                style={{ marginTop: "10px" }}
+              >
+                {id ? "Update" : "Save"}
+              </Button>
+            </Grid>
+          </Grid>
+        </form>
+      </CardContent>
+    </Card>
   );
 }
