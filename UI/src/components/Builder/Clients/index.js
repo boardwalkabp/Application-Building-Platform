@@ -63,7 +63,7 @@ export default function Clients() {
             <EditIcon color="primary" />
           </IconButton>
           <IconButton onClick={() => navigate(`/builder/clients/delete/${params.row.id}`)}>
-          <DeleteIcon color="primary"/>
+            <DeleteIcon color="primary" />
           </IconButton>
         </div>
       ),

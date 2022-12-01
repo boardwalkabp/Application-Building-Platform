@@ -12,7 +12,7 @@ export default function AddQuestion() {
     body: "",
     type: "",
   });
-  
+
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
   const { id } = useParams();

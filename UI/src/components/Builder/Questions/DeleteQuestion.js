@@ -35,31 +35,31 @@ export default function DeleteQuestion() {
   };
 
   return (
-      <Card>
-        <CardContent>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <Typography variant="h4" gutterBottom>
-                {question.body}
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Typography variant="h6" gutterBottom>
-                Are you sure you want to delete this question?
-              </Typography>
-            </Grid>
-            <Grid item xs={12}>
-              <Button
-                fullWidth
-                variant="contained"
-                color="error"
-                onClick={handleSubmit}
-              >
-                Delete
-              </Button>
-            </Grid>
+    <Card>
+      <CardContent>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Typography variant="h4" gutterBottom>
+              {question.body}
+            </Typography>
           </Grid>
-        </CardContent>
-      </Card>
+          <Grid item xs={12}>
+            <Typography variant="h6" gutterBottom>
+              Are you sure you want to delete this question?
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Button
+              fullWidth
+              variant="contained"
+              color="error"
+              onClick={handleSubmit}
+            >
+              Delete
+            </Button>
+          </Grid>
+        </Grid>
+      </CardContent>
+    </Card>
   );
 }

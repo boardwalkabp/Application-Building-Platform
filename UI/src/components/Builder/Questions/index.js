@@ -71,7 +71,7 @@ export default function Questions() {
               navigate(`/builder/questions/delete/${params.row.id}`)
             }
           >
-             <DeleteIcon color="primary"/>
+            <DeleteIcon color="primary" />
           </IconButton>
         </div>
       ),
@@ -118,55 +118,55 @@ export default function Questions() {
   };
 
   return (
-      <Card>
-        <CardHeader title="Questions" />
-        <CardContent>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <Box sx={{ display: "flex" }}>
-                <TextField
-                  fullWidth
-                  variant="outlined"
-                  label="Search"
-                  value={search}
-                  onChange={handleSearch}
-                />
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={handleSearchClick}
-                  sx={{ ml: 2 }}
-                >
-                  Search
-                </Button>
-                <Button
-                  variant="contained"
-                  color="primary"
-                  onClick={handleAdd}
-                  sx={{ ml: 2 }}
-                >
-                  Add New Question
-                </Button>
-              </Box>
-            </Grid>
-            <Grid item xs={12}>
-              <div style={{ height: 400, width: "100%" }}>
-                <DataGrid
-                  rows={searchKeyword !== "" ? searchResults : questions}
-                  columns={columns}
-                  pageSize={rowsPerPage}
-                  rowsPerPageOptions={[5, 10, 20]}
-                  checkboxSelection
-                  disableSelectionOnClick
-                  onSelectionModelChange={handleSelectionChange}
-                  onRowClick={handleRowClick}
-                  onPageChange={handlePageChange}
-                  onRowsPerPageChange={handleRowsPerPageChange}
-                />
-              </div>
-            </Grid>
+    <Card>
+      <CardHeader title="Questions" />
+      <CardContent>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Box sx={{ display: "flex" }}>
+              <TextField
+                fullWidth
+                variant="outlined"
+                label="Search"
+                value={search}
+                onChange={handleSearch}
+              />
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSearchClick}
+                sx={{ ml: 2 }}
+              >
+                Search
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleAdd}
+                sx={{ ml: 2 }}
+              >
+                Add New Question
+              </Button>
+            </Box>
           </Grid>
-        </CardContent>
-      </Card>
+          <Grid item xs={12}>
+            <div style={{ height: 400, width: "100%" }}>
+              <DataGrid
+                rows={searchKeyword !== "" ? searchResults : questions}
+                columns={columns}
+                pageSize={rowsPerPage}
+                rowsPerPageOptions={[5, 10, 20]}
+                checkboxSelection
+                disableSelectionOnClick
+                onSelectionModelChange={handleSelectionChange}
+                onRowClick={handleRowClick}
+                onPageChange={handlePageChange}
+                onRowsPerPageChange={handleRowsPerPageChange}
+              />
+            </div>
+          </Grid>
+        </Grid>
+      </CardContent>
+    </Card>
   );
 }
