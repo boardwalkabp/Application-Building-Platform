@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add postgres entity provider
 builder.Services.AddDbContext<DatabaseContext>(
-    options => options.UseNpgsql(builder.Configuration.GetConnectionString("ApbDbConnection")));
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("liveDbConnection")));
 
 // For InvalidCastException
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
@@ -21,6 +21,12 @@ app.UseHttpsRedirection();
 app.UseCors(options =>
             options.WithOrigins("http://localhost:3000").
             AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
+
+// // Configure the HTTP request pipeline.
+// app.UseHttpsRedirection();
+// app.UseCors(options =>
+//             options.WithOrigins("https://demo-abp.netlify.app/").
+//             AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseHttpsRedirection();
 
