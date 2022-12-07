@@ -33,6 +33,7 @@ export default function Questions() {
     createAPIEndpoint(ENDPOINTS.questions)
       .fetch()
       .then((res) => {
+        console.log(res.data);
         setQuestions(res.data);
         setLoading(false);
       })
@@ -46,8 +47,12 @@ export default function Questions() {
   const columns = [
     // { field: "id", headerName: "ID", width: 90 },
     { field: "body", headerName: "Body", width: 200 },
-    { field: "type", headerName: "Type", width: 200 },
-    // { field: "category", headerName: "Category", width: 200 },
+    // { field: "type", headerName: "Type", width: 200 },
+    { field: "questionType", headerName: "Question Type", width: 150 },
+    // { field: "options", headerName: "Options", width: 200 },
+    { field: "mous", headerName: "Mous", width: 200 },
+
+
     // { field: "createdAt", headerName: "Created At", width: 200 },
     // { field: "updatedAt", headerName: "Updated At", width: 200 },
     {
