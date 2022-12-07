@@ -1,16 +1,18 @@
 import axios from "axios";
 
-export const BASE_URL = "https://localhost:7022/";
-
+let API_URL = "https://demo-abp.herokuapp.com/";
+if (window.location.hostname === "localhost") {
+  API_URL = "https://localhost:7022/";
+}
 
 export const createAPIEndpoint = (endpoint) => {
-  let url = BASE_URL + "api/" + endpoint + "/";
+  let baseURL = API_URL + "api/" + endpoint + "/";
   return {
-    fetch: () => axios.get(url),
-    fetchById: (id) => axios.get(url + id),
-    post: (newRecord) => axios.post(url, newRecord),
-    put: (id, updatedRecord) => axios.put(url + id, updatedRecord),
-    delete: (id) => axios.delete(url + id),
+    fetch: () => axios.get(baseURL),
+    fetchById: (id) => axios.get(baseURL + id),
+    post: (newRecord) => axios.post(baseURL, newRecord),
+    put: (id, updatedRecord) => axios.put(baseURL + id, updatedRecord),
+    delete: (id) => axios.delete(baseURL + id),
   };
 };
 
