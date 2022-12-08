@@ -22,12 +22,6 @@ app.UseCors(options =>
             options.WithOrigins("*").
             AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
-// // Configure the HTTP request pipeline.
-// app.UseHttpsRedirection();
-// app.UseCors(options =>
-//             options.WithOrigins("https://demo-abp.netlify.app/").
-//             AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

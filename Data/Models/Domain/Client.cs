@@ -33,6 +33,7 @@ namespace API.Models.Domain
         public DateTime? UpdatedAt { get; set; } = DateTime.Now;
         [Column(TypeName = "jsonb")]
         public List<Application>? Applications { get; set; }
-        
+        public string Role { get; set; } = "Client";
+
     }
 }

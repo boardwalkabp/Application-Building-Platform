@@ -131,6 +131,10 @@ namespace Data.Migrations
                     b.Property<DateTime?>("ResetTokenExpires")
                         .HasColumnType("timestamp without time zone");
 
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp without time zone");
 
@@ -223,6 +227,10 @@ namespace Data.Migrations
 
                     b.Property<DateTime?>("ResetTokenExpires")
                         .HasColumnType("timestamp without time zone");
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp without time zone");
