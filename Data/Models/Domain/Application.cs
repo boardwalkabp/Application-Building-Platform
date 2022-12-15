@@ -19,8 +19,14 @@ namespace API.Models.Domain
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? CompletedAt { get; set; }
         [Column(TypeName = "jsonb")]
-        public List<Question>? Questions { get; set; }
-        public virtual Client? Client { get; set; }
-        public virtual Category? Category { get; set; }
+        public List<Question_branching>? Questions { get; set; }
+        public Guid ClientId { get; set; }
+        public Guid CategoryId { get; set; }
+
+    }
+    public class Question_branching
+    {
+        // public Guid Id { get; set; }
+        public string value { get; set; } = string.Empty;
     }
 }
