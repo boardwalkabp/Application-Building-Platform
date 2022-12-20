@@ -9,6 +9,8 @@ namespace API.Models.Domain
         public Guid Id { get; set; }
         [Required]
         public string Title { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Status { get; set; } = string.Empty;
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CreatedAt { get; set; } = DateTime.Now;
@@ -34,7 +36,8 @@ namespace API.Models.Domain
 
     public class AnswerValue
     {
-        //public Guid Id { get; set; }
+        public Guid QuestionId { get; set; }
+
         public string value { get; set; } = string.Empty;
     }
 }
