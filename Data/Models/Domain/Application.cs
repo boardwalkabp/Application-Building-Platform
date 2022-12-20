@@ -20,6 +20,7 @@ namespace API.Models.Domain
         public DateTime? CompletedAt { get; set; }
         [Column(TypeName = "jsonb")]
         public List<Question_branching>? Questions { get; set; }
+        [Column(TypeName = "jsonb")]
         public List<AnswerValue>? Answers { get; set; }
         public Guid ClientId { get; set; }
         public Guid CategoryId { get; set; }
@@ -33,6 +34,7 @@ namespace API.Models.Domain
 
     public class AnswerValue
     {
+        //public Guid Id { get; set; }
         public string value { get; set; } = string.Empty;
     }
 }
