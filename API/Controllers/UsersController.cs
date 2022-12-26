@@ -181,7 +181,7 @@ namespace API.Controllers
                 Username = user.Username,
                 Role = user.Role,
                 StatusCode = 1,
-                Message = "User successfully logged in! :D",
+                Message = "Userr successfully logged in! :D",
             });
         }
 
