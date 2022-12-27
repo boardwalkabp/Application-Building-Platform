@@ -178,6 +178,7 @@ namespace API.Controllers
             {
                 Name = client.Name,
                 Username = client.Username,
+                Id = client.Id,
                 Role = client.Role,
                 StatusCode = 1,
                 Message = "Client successfully logged in! :D",
