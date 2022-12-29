@@ -37,13 +37,13 @@ namespace API.Models.Domain
     }
     public class Question_branching
     {
-        public string Value { get; set; } = string.Empty;
+        public string value { get; set; } = string.Empty;
     }
 
     public class AnswerValue
     {
         public Guid QuestionId { get; set; }
 
-        public string Value { get; set; } = string.Empty;
+        public string value { get; set; } = string.Empty;
     }
 }
