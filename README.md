@@ -6,5 +6,6 @@ Backend of survey builder web-application built with ASP.NET 6.
 
 # Build Instructions
 ```
-dotnet run --project API
+cd api
+dotnet run
 ```
