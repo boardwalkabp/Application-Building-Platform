@@ -1,17 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API.Models.Domain
 {
-    [Table("questions")]
-    public class Question
+    [Table("answers")]
+    public class Answer
     {
         [Column("id")]
         public Guid Id { get; set; }
-        [Column("body")]
-        public string Body { get; set; } = string.Empty;
-        [Column("question_type")]
-        public string QuestionType { get; set; } = string.Empty;
+        [Required]
+        [Column("value")]
+        public string Value { get; set; } = string.Empty;
+        [Column("question_id")]
+        public Guid QuestionId { get; set; }
+        public Question? Question { get; set; }
+        public Guid? NextQuestionId { get; set; }
+        public Question? NextQuestion { get; set; }
         [Column("created_at")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -20,12 +24,6 @@ namespace API.Models.Domain
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? UpdatedAt { get; set; } = DateTime.Now;
-        [Column("choices", TypeName = "jsonb")]
-        public List<Choices>? Choices { get; set; }
+    }
 
-    }
-    public class Choices
-    {
-        public string value { get; set; } = string.Empty;
-    }
 }
