@@ -133,7 +133,6 @@ namespace API.Controllers
                 PasswordSalt = passwordSalt,
                 PhoneNumber = request.PhoneNumber,
                 Address = request.Address,
-                //ApplicationId = request.ApplicationId,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
                 VerificationToken = CreateRandomToken()
@@ -176,9 +175,12 @@ namespace API.Controllers
 
             return Ok(new ClientLoginResponse
             {
+                Id = client.Id,
                 Name = client.Name,
                 Username = client.Username,
-                Id = client.Id,
+                Email = client.Email,
+                PhoneNumber = client.PhoneNumber,
+                Address = client.Address,
                 Role = client.Role,
                 StatusCode = 1,
                 Message = "Client successfully logged in! :D",

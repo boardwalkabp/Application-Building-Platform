@@ -177,8 +177,12 @@ namespace API.Controllers
 
             return Ok(new UserLoginResponse
             {
+                Id = user.Id,
                 Name = user.Name,
                 Username = user.Username,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                Address = user.Address,
                 Role = user.Role,
                 StatusCode = 1,
                 Message = "User successfully logged in! :D",

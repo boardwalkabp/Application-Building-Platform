@@ -14,6 +14,7 @@ namespace API.Models.Domain
         [Column("question_id")]
         public Guid QuestionId { get; set; }
         public Question? Question { get; set; }
+        [Column("next_question_id")]
         public Guid? NextQuestionId { get; set; }
         public Question? NextQuestion { get; set; }
         [Column("created_at")]
