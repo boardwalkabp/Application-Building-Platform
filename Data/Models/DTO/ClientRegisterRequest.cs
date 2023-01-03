@@ -20,7 +20,5 @@ namespace API.Models.DTO
         public string PhoneNumber { get; set; } = string.Empty;
         [Required]
         public string Address { get; set; } = string.Empty;
-        //public object ApplicationId { get; set; }
-        //public List<Application> Applications { get; set; }
     }
 }

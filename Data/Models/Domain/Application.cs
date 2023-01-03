@@ -13,6 +13,19 @@ namespace API.Models.Domain
         public string Title { get; set; } = string.Empty;
         [Column("status")]
         public string Status { get; set; } = "Not Started";
+        [Required]
+        [Column("user_id")]
+        public Guid UserId { get; set; }
+        [Required]
+        [Column("client_id")]
+        public Guid ClientId { get; set; }
+        [Required]
+        [Column("category_id")]
+        public Guid CategoryId { get; set; }
+        [Column("questions", TypeName = "jsonb")]
+        public List<ApplicationQuestion>? Questions { get; set; }
+        [Column("answers", TypeName = "jsonb")]
+        public List<ApplicationAnswer>? Answers { get; set; }
         [Column("created_at")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -25,22 +38,14 @@ namespace API.Models.Domain
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? CompletedAt { get; set; }
-        [Column("questions", TypeName = "jsonb")]
-        public List<Question_branching>? Questions { get; set; }
-        [Column("answers", TypeName = "jsonb")]
-        public List<AnswerValue>? Answers { get; set; }
-        [Column("client_id")]
-        public Guid ClientId { get; set; }
-        [Column("category_id")]
-        public Guid CategoryId { get; set; }
 
     }
-    public class Question_branching
+    public class ApplicationQuestion
     {
         public string value { get; set; } = string.Empty;
     }
 
-    public class AnswerValue
+    public class ApplicationAnswer
     {
         public Guid QuestionId { get; set; }
 

@@ -1,26 +1,26 @@
-﻿using System.Collections.Generic;
-using API.Models.Domain;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace Data.Migrations
 {
-    public partial class AddApplicatonAnswersColumn : Migration
+    public partial class MigrateUserIdColumn : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AddColumn<List<ApplicationAnswer>>(
-                name: "Answers",
+            migrationBuilder.AddColumn<Guid>(
+                name: "user_id",
                 table: "applications",
-                type: "jsonb",
-                nullable: true);
+                type: "uuid",
+                nullable: false,
+                defaultValue: new Guid("00000000-0000-0000-0000-000000000000"));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropColumn(
-                name: "Answers",
+                name: "user_id",
                 table: "applications");
         }
     }

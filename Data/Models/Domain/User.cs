@@ -31,12 +31,14 @@ namespace API.Models.Domain
         public string? PasswordResetToken { get; set; }
         [Column("reset_token_expires")]
         public DateTime? ResetTokenExpires { get; set; }
-        [Column("phone_number")]
-        [Phone, PersonalData]
-        public string PhoneNumber { get; set; } = string.Empty;
         [Column("address")]
-        [MaxLength(100), PersonalData]
+        [Required, MaxLength(100), PersonalData]
         public string Address { get; set; } = string.Empty;
+        [Column("phone_number")]
+        [Required, Phone, PersonalData]
+        public string PhoneNumber { get; set; } = string.Empty;
+        [Column("role")]
+        public string Role { get; set; } = "Client";
         [Column("created_at")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -45,7 +47,5 @@ namespace API.Models.Domain
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? UpdatedAt { get; set; } = DateTime.Now;
-        [Column("role")]
-        public string Role { get; set; } = "User";
     }
 }

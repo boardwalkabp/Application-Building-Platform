@@ -12,6 +12,8 @@ namespace API.Models.Domain
         public string Body { get; set; } = string.Empty;
         [Column("question_type")]
         public string QuestionType { get; set; } = string.Empty;
+        [Column("choices", TypeName = "jsonb")]
+        public List<Choices>? Choices { get; set; }
         [Column("created_at")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
@@ -20,8 +22,6 @@ namespace API.Models.Domain
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime? UpdatedAt { get; set; } = DateTime.Now;
-        [Column("choices", TypeName = "jsonb")]
-        public List<Choices>? Choices { get; set; }
 
     }
     public class Choices

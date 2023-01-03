@@ -44,7 +44,7 @@ namespace Data.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<List<Question_branching>>("Questions")
+                    b.Property<List<ApplicationQuestion>>("Questions")
                         .HasColumnType("jsonb");
 
                     b.Property<string>("Title")

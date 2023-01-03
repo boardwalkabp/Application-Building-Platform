@@ -32,7 +32,7 @@ namespace Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
-                    b.Property<List<AnswerValue>>("Answers")
+                    b.Property<List<ApplicationAnswer>>("Answers")
                         .HasColumnType("jsonb");
 
                     b.Property<Guid>("CategoryId")
@@ -47,7 +47,7 @@ namespace Data.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<List<Question_branching>>("Questions")
+                    b.Property<List<ApplicationQuestion>>("Questions")
                         .HasColumnType("jsonb");
 
                     b.Property<string>("Title")

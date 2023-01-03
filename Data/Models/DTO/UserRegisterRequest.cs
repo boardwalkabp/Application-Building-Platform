@@ -16,9 +16,9 @@ namespace API.Models.DTO
         public string Password { get; set; } = string.Empty;
         [Required, Compare("Password", ErrorMessage = "Passwords did not match.")]
         public string ConfirmPassword { get; set; } = string.Empty;
-        //[Phone, PersonalData]
-        //public string PhoneNumber { get; set; } = string.Empty;
-        //[Required]
-        //public string Address { get; set; } = string.Empty;
+        [Phone, PersonalData]
+        public string PhoneNumber { get; set; } = string.Empty;
+        [Required]
+        public string Address { get; set; } = string.Empty;
     }
 }

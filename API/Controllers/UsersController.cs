@@ -132,8 +132,8 @@ namespace API.Controllers
                 Email = request.Email,
                 PasswordHash = passwordHash,
                 PasswordSalt = passwordSalt,
-                //PhoneNumber = request.PhoneNumber,
-                //Address = request.Address,
+                PhoneNumber = request.PhoneNumber,
+                Address = request.Address,
                 CreatedAt = DateTime.UtcNow,
                 UpdatedAt = DateTime.UtcNow,
                 VerificationToken = CreateRandomToken()

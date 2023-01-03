@@ -70,7 +70,7 @@ namespace Data.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("id");
 
-                    b.Property<List<AnswerValue>>("Answers")
+                    b.Property<List<ApplicationAnswer>>("Answers")
                         .HasColumnType("jsonb")
                         .HasColumnName("answers");
 
@@ -90,7 +90,7 @@ namespace Data.Migrations
                         .HasColumnType("timestamp without time zone")
                         .HasColumnName("created_at");
 
-                    b.Property<List<Question_branching>>("Questions")
+                    b.Property<List<ApplicationQuestion>>("Questions")
                         .HasColumnType("jsonb")
                         .HasColumnName("questions");
 
