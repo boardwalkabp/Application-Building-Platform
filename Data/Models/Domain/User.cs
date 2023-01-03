@@ -38,7 +38,7 @@ namespace API.Models.Domain
         [Required, Phone, PersonalData]
         public string PhoneNumber { get; set; } = string.Empty;
         [Column("role")]
-        public string Role { get; set; } = "Client";
+        public string Role { get; set; } = "User";
         [Column("created_at")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
